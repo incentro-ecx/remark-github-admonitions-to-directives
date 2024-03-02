@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@tsconfig/strictest/tsconfig.json",
+
+  "include": ["src/**/*"],
+
+  "compilerOptions": {
+    "allowJs": true,
+
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "exactOptionalPropertyTypes": false,
+    "noPropertyAccessFromIndexSignature": false,
+
+    "declaration": true,
+    "sourceMap": true,
+    "incremental": true,
+    "outDir": "dist",
+    "tsBuildInfoFile": "node_modules/.cache/typescript/.tsbuildinfo",
+
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+
+    "stripInternal": true
+  }
+}
