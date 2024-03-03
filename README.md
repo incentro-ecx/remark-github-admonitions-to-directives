@@ -1,8 +1,17 @@
 <div align="center">
   <h1 align="center">Remark Github Alerts to Directives</h1>
 
+  <a href="https://www.npmjs.com/package/remark-github-admonitions-to-directives">
+    <img alt="NPM version" src="https://img.shields.io/npm/v/remark-github-admonitions-to-directives?logo=npm&style=flat-square">
+  </a>
+  <a href="https://github.com/incentro-dc/remark-github-admonitions-to-directives/actions/workflows/build.yml">
+    <img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/incentro-dc/remark-github-admonitions-to-directives/build.yml?label=Builds&logo=github&style=flat-square">
+  </a>
+  <a href="https://github.com/incentro-dc/remark-github-admonitions-to-directives/actions/workflows/test.yml">
+    <img alt="Test status" src="https://img.shields.io/github/actions/workflow/status/incentro-dc/remark-github-admonitions-to-directives/test.yml?label=Tests&logo=vitest&style=flat-square">
+  </a>
   <a href="https://prettier.io/">
-    <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
+    <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?logo=prettier&style=flat-square">
   </a>
 </div>
 
