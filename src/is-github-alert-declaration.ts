@@ -6,12 +6,12 @@ import {
 const GITHUB_ALERT_DECLARATION_REGEX = /^\s*\[\!(?<type>\w+)\]\s*$/;
 
 /**
- * Function that checks if a given string is a GitHub alert declaration and
+ * Function that checks if a given string is a Github alert declaration and
  * returns the parsed alert type if it is.
  *
  * A GitHub alert declaration is a string that is structured like this:
  *
- * `![TYPE]`
+ * `[!TYPE]`
  */
 export function parseGithubAlertDeclaration(
   text: string,
