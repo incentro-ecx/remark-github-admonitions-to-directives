@@ -17,7 +17,7 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "clean": "pnpm run \"/^clean:.*/\"",
     "clean:build": "rimraf dist",
     "clean:cache": "rimraf node_modules/.cache",
@@ -25,6 +25,7 @@
     "format:prettier": "prettier --write . --cache",
     "lint": "pnpm run \"/^lint:.*/\"",
     "lint:prettier": "prettier --check . --cache",
+    "lint:typescript": "tsc --noEmit",
     "test": "vitest"
   },
   "dependencies": {
