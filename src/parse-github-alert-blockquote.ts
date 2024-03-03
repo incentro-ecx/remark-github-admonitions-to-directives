@@ -1,4 +1,4 @@
-import type { Blockquote } from "mdast";
+import type { Blockquote, Paragraph, Text } from "mdast";
 import type { GithubAlert } from "./github-alert.type.js";
 import { parseGithubAlertDeclaration } from "./is-github-alert-declaration.js";
 
@@ -28,20 +28,23 @@ export function parseGithubAlertBlockquote(
 
   if (type === false) return false;
 
+  const textNodeChildren: Text[] =
+    textNodes.length > 0 ? [{ type: "text", value: textNodes.join("\n") }] : [];
+
+  const hasParagraphChildren =
+    textNodeChildren.length > 0 || paragraphChildren.length > 0;
+
+  const alertParagraphChildren: Paragraph[] = hasParagraphChildren
+    ? [
+        {
+          type: "paragraph",
+          children: [...textNodeChildren, ...paragraphChildren],
+        },
+      ]
+    : [];
+
   return {
     type,
-    children: [
-      {
-        type: "paragraph",
-        children: [
-          {
-            type: "text",
-            value: textNodes.join("\n"),
-          },
-          ...paragraphChildren,
-        ],
-      },
-      ...blockQuoteChildren,
-    ],
+    children: [...alertParagraphChildren, ...blockQuoteChildren],
   };
 }

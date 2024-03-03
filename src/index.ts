@@ -1,1 +1,1 @@
-export { remarkGithubAdmonitionsToDirectives } from "./plugin.js";
+export { remarkGithubAdmonitionsToDirectives as default } from "./plugin.js";
