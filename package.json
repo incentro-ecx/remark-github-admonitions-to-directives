@@ -3,6 +3,22 @@
   "name": "remark-github-admonitions-to-directives",
   "version": "0.1.0",
   "description": "A Remark plugin to convert Github style alerts to admonitions directives.",
+  "keywords": [
+    "remark",
+    "remark-plugin",
+    "markdown",
+    "github",
+    "alert",
+    "remark-directive",
+    "docusaurus",
+    "admonitions",
+    "admonition"
+  ],
+  "homepage": "https://github.com/incentro-dc/remark-github-admonitions-to-directives",
+  "bugs": "https://github.com/incentro-dc/remark-github-admonitions-to-directives/issues",
+  "repository": "https://github.com/incentro-dc/remark-github-admonitions-to-directives",
+  "license": "MIT",
+  "author": "Luud Janssen",
   "sideEffects": false,
   "type": "module",
   "exports": {
