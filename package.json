@@ -41,18 +41,22 @@
     "lint": "pnpm run \"/^lint:.*/\"",
     "lint:prettier": "prettier --check . --cache",
     "lint:typescript": "tsc --noEmit",
+    "prepack": "pnpm run build",
+    "release": "release-it",
     "test": "vitest"
   },
   "dependencies": {
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^8.0.1",
     "@tsconfig/strictest": "^2.0.3",
     "@types/mdast": "^4.0.3",
     "mdast-util-directive": "^3.0.0",
     "prettier": "^3.1.1",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-packagejson": "^2.4.12",
+    "release-it": "^17.1.1",
     "remark": "^15.0.1",
     "remark-directive": "^3.0.0",
     "rimraf": "^5.0.5",
