@@ -20,6 +20,7 @@
     "sourceMap": true,
     "incremental": true,
     "outDir": "dist",
+    "tsBuildInfoFile": "node_modules/.cache/typescript/.tsbuildinfo",
 
     "module": "nodenext",
     "moduleResolution": "nodenext",
