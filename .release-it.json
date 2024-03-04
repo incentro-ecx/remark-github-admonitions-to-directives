@@ -22,5 +22,8 @@
       "infile": "CHANGELOG.md",
       "header": "# Changelog"
     }
+  },
+  "hooks": {
+    "after:@release-it/conventional-changelog:beforeRelease": "pnpm prettier --write CHANGELOG.md"
   }
 }
