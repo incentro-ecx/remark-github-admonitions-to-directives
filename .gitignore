@@ -97,3 +97,6 @@ $RECYCLE.BIN/
 
 ## Build ouptupt
 dist
+
+## Environment variables
+.env
