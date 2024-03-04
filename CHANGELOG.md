@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.2](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/1.0.1...1.0.2) (2024-03-04)
+
+### Bug Fixes
+
+- add build output to NPM export ([45198f5](https://github.com/incentro-dc/remark-github-admonitions-to-directives/commit/45198f519aed77e9339a64a1e41dd386365f0955))
+
 ## [1.0.1](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/1.0.0...1.0.1) (2024-03-04)
 
 ### Bug Fixes
