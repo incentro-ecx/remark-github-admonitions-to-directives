@@ -21,6 +21,8 @@
     }
   },
   "hooks": {
+    "before:init": "pnpm lint && pnpm test run",
+    "after:bump": "pnpm clean && pnpm build",
     "after:@release-it/conventional-changelog:beforeRelease": "pnpm prettier --write CHANGELOG.md"
   }
 }
