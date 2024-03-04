@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.3](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/1.0.2...1.0.3) (2024-03-04)
+
+### Bug Fixes
+
+- fix release process to prevent empty builds ([4f9ad07](https://github.com/incentro-dc/remark-github-admonitions-to-directives/commit/4f9ad0777b0dc6605ee3d6f37844cab12b8de3cc))
+
 ## [1.0.2](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/1.0.1...1.0.2) (2024-03-04)
 
 ### Bug Fixes
