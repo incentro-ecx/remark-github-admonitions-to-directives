@@ -42,7 +42,7 @@
     "lint:prettier": "prettier --check . --cache",
     "lint:typescript": "tsc --noEmit",
     "prepack": "pnpm run clean:build && pnpm run build",
-    "release": "release-it",
+    "release": "env-cmd release-it",
     "test": "vitest"
   },
   "dependencies": {
@@ -54,6 +54,7 @@
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.1",
     "@tsconfig/strictest": "^2.0.3",
+    "env-cmd": "^10.1.0",
     "prettier": "^3.1.1",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-packagejson": "^2.4.12",
