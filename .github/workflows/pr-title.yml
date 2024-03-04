@@ -27,7 +27,8 @@ jobs:
           types: |
             feat
             fix
+            chore
             docs
-            ci
             style
             refactor
+            ci
