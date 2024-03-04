@@ -29,8 +29,30 @@ The `package.json` file contains a set of scripts you can run, most notably:
 
 We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to ensure consistent commit messages. This allows us to automatically generate a changelog and enforce a consistent style.
 
-## 🚀 Pull Requests
+## 🙌 Pull Requests
 
 When submitting a pull request, please make sure your changes are covered by tests. We use [Vitest](https://vitest.dev), for testing.
 
 Also, make sure your code is self-documenting and any documentation in the `README.md` is updated.
+
+## 🚀 Releases
+
+We use [`release-it`](https://github.com/release-it/release-it) to manage our releases. This tool will look at the commit messages and will bump the version and generate a changelog accordingly.
+
+To execute releases, you first need to create a personal access token on Github with the `repo` scope. If you use [this link](https://github.com/settings/tokens/new?scopes=repo&description=Remark%20Github%20Admonitions%20to%20Directives%20-%20release-it) the right scope is selected automatically.
+
+If you generated the token, you need to copy your `.env.example` to `.env` and fill in the `GITHUB_TOKEN` variable.
+
+Beside generating a Github token, you also need to authenticate yourself with NPM, by running:
+
+```bash
+npm login
+```
+
+After you've setup authentication with both Github and NPM you can run:
+
+```bash
+pnpm release
+```
+
+This will kickstart `release-it` and guide you through the process of releasing a new version.
