@@ -28,7 +28,7 @@
       "default": "./dist/index.js"
     }
   },
-  "main": "./dist/index.jss",
+  "main": "./dist/index.js",
   "files": [
     "dist/**"
   ],
