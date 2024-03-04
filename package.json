@@ -41,7 +41,7 @@
     "lint": "pnpm run \"/^lint:.*/\"",
     "lint:prettier": "prettier --check . --cache",
     "lint:typescript": "tsc --noEmit",
-    "prepack": "pnpm run build",
+    "prepack": "pnpm run clean:build && pnpm run build",
     "release": "release-it",
     "test": "vitest"
   },
