@@ -1,6 +1,11 @@
 {
   "github": {
-    "release": true
+    "release": true,
+    "releaseName": "v${version}"
+  },
+  "git": {
+    "commitMessage": "chore: release v${version}",
+    "tagAnnotation": "v${version}"
   },
   "plugins": {
     "@release-it/conventional-changelog": {
