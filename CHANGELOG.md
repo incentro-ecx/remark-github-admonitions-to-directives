@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.4](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/1.0.3...1.0.4) (2024-03-05)
+
+### Bug Fixes
+
+- loosen dependency ranges ([62d46c0](https://github.com/incentro-dc/remark-github-admonitions-to-directives/commit/62d46c0b9aee9b7391d7c044c9a9da33cd38e946))
+
 ## [1.0.3](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/1.0.2...1.0.3) (2024-03-04)
 
 ### Bug Fixes
