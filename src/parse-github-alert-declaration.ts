@@ -1,6 +1,4 @@
-import {
-  type GithubAlertType,
-} from "./github-alert.type.js";
+import { type GithubAlertType } from "./github-alert.type.js";
 import { isGithubAlertType } from "./is-github-alert-type.js";
 
 const GITHUB_ALERT_DECLARATION_REGEX = /^\s*\[\!(?<type>\w+)\]\s*$/;
