@@ -4,7 +4,7 @@ import { GithubAlertType } from "./github-alert.type.js";
 import { parseGithubAlertBlockquote } from "./parse-github-alert-blockquote.js";
 
 describe("parse-github-alert-blockquote", () => {
-  it("should return false if the blockquote has no children", () => {
+  it("should return null if the blockquote has no children", () => {
     const blockquote: Blockquote = {
       type: "blockquote",
       children: [],
@@ -12,10 +12,10 @@ describe("parse-github-alert-blockquote", () => {
 
     const result = parseGithubAlertBlockquote(blockquote);
 
-    expect(result).toBe(false);
+    expect(result).toBe(null);
   });
 
-  it("should return false if the first chlid of the blockquote is not a paragraph", () => {
+  it("should return null if the first child of the blockquote is not a paragraph", () => {
     const blockquote: Blockquote = {
       type: "blockquote",
       children: [
@@ -34,10 +34,10 @@ describe("parse-github-alert-blockquote", () => {
 
     const result = parseGithubAlertBlockquote(blockquote);
 
-    expect(result).toBe(false);
+    expect(result).toBe(null);
   });
 
-  it("should return false if the first child of the paragraph is not a text node", () => {
+  it("should return null if the first child of the paragraph is not a text node", () => {
     const blockquote: Blockquote = {
       type: "blockquote",
       children: [
@@ -60,10 +60,10 @@ describe("parse-github-alert-blockquote", () => {
 
     const result = parseGithubAlertBlockquote(blockquote);
 
-    expect(result).toBe(false);
+    expect(result).toBe(null);
   });
 
-  it("should return false if the first paragraph child doesn't contain a valid alert declaration", () => {
+  it("should return null if the first paragraph child doesn't contain a valid alert declaration", () => {
     const blockquote: Blockquote = {
       type: "blockquote",
       children: [
@@ -81,7 +81,7 @@ describe("parse-github-alert-blockquote", () => {
 
     const result = parseGithubAlertBlockquote(blockquote);
 
-    expect(result).toBe(false);
+    expect(result).toBe(null);
   });
 
   it("should return the parsed alert if the blockquote is a valid alert", () => {
