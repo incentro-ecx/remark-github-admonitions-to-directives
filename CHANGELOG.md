@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.5](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/1.0.4...1.0.5) (2024-04-18)
+
+### Features
+
+- add util to check whether type is valid GitHub alert type ([de20d72](https://github.com/incentro-dc/remark-github-admonitions-to-directives/commit/de20d7218a5e440f0688237757caf4f71274ce2a))
+- simplify code and rename file to function name ([2ba5d63](https://github.com/incentro-dc/remark-github-admonitions-to-directives/commit/2ba5d63b509c024bd372772a779527e87fe48c74))
+- simplify code and return semantically correct type ([c66d99c](https://github.com/incentro-dc/remark-github-admonitions-to-directives/commit/c66d99c739bfd7a7927b0e7fddca4d267f88c0df))
+- use new return value in plugin ([ddb6eb9](https://github.com/incentro-dc/remark-github-admonitions-to-directives/commit/ddb6eb93b0691790b62ae2a07f2a99c81e462abf))
+
 ## [1.0.4](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/1.0.3...1.0.4) (2024-03-05)
 
 ### Bug Fixes
