@@ -13,7 +13,7 @@ export const remarkGithubAdmonitionsToDirectives: Plugin<[], Root> = () => {
       (node: Blockquote, index?: number, parent?: Parent) => {
         const githubAlert = parseGithubAlertBlockquote(node);
 
-        if (githubAlert === false) return;
+        if (githubAlert === null) return;
 
         const directive: ContainerDirective = {
           type: "containerDirective",

@@ -1,6 +1,6 @@
 import type { Blockquote, Paragraph, Text } from "mdast";
 import type { GithubAlert } from "./github-alert.type.js";
-import { parseGithubAlertDeclaration } from "./is-github-alert-declaration.js";
+import { parseGithubAlertDeclaration } from "./parse-github-alert-declaration.js";
 
 /**
  * Function that checks if a given blockquote is a GitHub alert and returns the
@@ -8,25 +8,23 @@ import { parseGithubAlertDeclaration } from "./is-github-alert-declaration.js";
  */
 export function parseGithubAlertBlockquote(
   node: Blockquote,
-): false | GithubAlert {
+): GithubAlert | null {
   const [firstChild, ...blockQuoteChildren] = node.children;
 
-  if (firstChild === undefined) return false;
-  if (firstChild.type !== "paragraph") return false;
+  if (firstChild?.type !== "paragraph") return null;
 
   const [firstParagraphChild, ...paragraphChildren] = firstChild.children;
 
-  if (firstParagraphChild === undefined) return false;
-  if (firstParagraphChild.type !== "text") return false;
+  if (firstParagraphChild?.type !== "text") return null;
 
   const [possibleTypeDeclaration, ...textNodes] =
     firstParagraphChild.value.split("\n");
 
-  if (possibleTypeDeclaration === undefined) return false;
+  if (possibleTypeDeclaration === undefined) return null;
 
   const type = parseGithubAlertDeclaration(possibleTypeDeclaration);
 
-  if (type === false) return false;
+  if (type === null) return null;
 
   const textNodeChildren: Text[] =
     textNodes.length > 0 ? [{ type: "text", value: textNodes.join("\n") }] : [];

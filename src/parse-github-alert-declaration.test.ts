@@ -1,19 +1,19 @@
 import { describe, expect, it } from "vitest";
 import { GithubAlertType } from "./github-alert.type.js";
-import { parseGithubAlertDeclaration } from "./is-github-alert-declaration.js";
+import { parseGithubAlertDeclaration } from "./parse-github-alert-declaration.js";
 
-describe("is-github-alert-declaration", () => {
-  it("should return false when passing an empty string.", () => {
+describe("parse-github-alert-declaration", () => {
+  it("should return null when passing an empty string.", () => {
     const result = parseGithubAlertDeclaration("");
-    expect(result).toBe(false);
+    expect(result).toBe(null);
   });
 
-  it("should return false when passing a string that's not a Github alert declaration.", () => {
+  it("should return null when passing a string that is not a Github alert declaration.", () => {
     const resultOne = parseGithubAlertDeclaration("test");
-    expect(resultOne).toBe(false);
+    expect(resultOne).toBe(null);
 
     const resultTwo = parseGithubAlertDeclaration("[!TEST]");
-    expect(resultTwo).toBe(false);
+    expect(resultTwo).toBe(null);
   });
 
   it("should return the alert type when passing a string that is a Github alert declaration.", () => {
