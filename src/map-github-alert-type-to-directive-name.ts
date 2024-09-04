@@ -14,7 +14,7 @@ export function mapGithubAlertTypeToDirectiveName(
       return "warning";
 
     case GithubAlertType.IMPORTANT:
-      return "warning";
+      return "info";
 
     case GithubAlertType.CAUTION:
       return "danger";
