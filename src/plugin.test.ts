@@ -32,6 +32,46 @@ describe("remark-github-admonitions-to-directives", () => {
     `);
   });
 
+  it("should convert a tip admonition to a tip directive", async () => {
+    const result = await process(`> [!TIP]`);
+
+    expect(result).toMatchInlineSnapshot(`
+      ":::tip
+      :::
+      "
+    `);
+  });
+
+  it("should convert a important admonition to an info directive", async () => {
+    const result = await process(`> [!IMPORTANT]`);
+
+    expect(result).toMatchInlineSnapshot(`
+      ":::info
+      :::
+      "
+    `);
+  });
+
+  it("should convert a warning admonition to a warning directive", async () => {
+    const result = await process(`> [!WARNING]`);
+
+    expect(result).toMatchInlineSnapshot(`
+      ":::warning
+      :::
+      "
+    `);
+  });
+
+  it("should convert a caution admonition to a danger directive", async () => {
+    const result = await process(`> [!CAUTION]`);
+
+    expect(result).toMatchInlineSnapshot(`
+      ":::danger
+      :::
+      "
+    `);
+  });
+
   it("should handle nested content", async () => {
     const result = await process(`> [!NOTE]
 > test
