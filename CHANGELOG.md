@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.0](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/1.0.5...2.0.0) (2024-09-05)
+
+### Bug Fixes
+
+- map GitHub "IMPORTANT" admonition to Docusaurus "info" admonition - fixes [#6](https://github.com/incentro-dc/remark-github-admonitions-to-directives/issues/6) ([4126c1d](https://github.com/incentro-dc/remark-github-admonitions-to-directives/commit/4126c1dff8bc6d4aad390e117e16012023db52bb))
+
 ## [1.0.5](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/1.0.4...1.0.5) (2024-04-18)
 
 ### Features
