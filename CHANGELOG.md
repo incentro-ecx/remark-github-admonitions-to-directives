@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.0](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/2.0.0...2.1.0) (2024-10-28)
+
+### Features
+
+- allow customizing the alert type to admonitions directive mapping via the plugin options ([6605a88](https://github.com/incentro-dc/remark-github-admonitions-to-directives/commit/6605a88a9a55affe44f0ac29d893238f637b96e4))
+
 ## [2.0.0](https://github.com/incentro-dc/remark-github-admonitions-to-directives/compare/1.0.5...2.0.0) (2024-09-05)
 
 ### Bug Fixes
