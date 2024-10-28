@@ -97,6 +97,50 @@ export default {
 > [!IMPORTANT]
 > Because this plugin converts Github's syntax to the directives syntax, and Docusaurus then uses the directives syntax to create the adminitions, this plugin has to be processed before any of the Docusaurus plugins. This is why it's added to the `beforeDefaultRemarkPlugins` array and not the `remarkPlugins` array.
 
+### ⚙️ Customizing the mapping
+
+By default, this plugin will map the Github alerts to the Remark admonitions as follows:
+
+- `NOTE` -> `note`
+- `TIP` -> `tip`
+- `WARNING` -> `warning`
+- `IMPORTANT` -> `info`
+- `CAUTION` -> `danger`
+
+If you want to customize this mapping, you can pass an object with the mapping to the plugin:
+
+```typescript
+import { remark } from "remark";
+import remarkDirective from "remark-directive";
+import remarkGithubAdmonitionsToDirectives, {
+  DEFAULT_MAPPING,
+  DirectiveName,
+  GithubAlertType,
+  type AlertTypeMapping,
+} from "remark-github-admonitions-to-directives";
+
+const mapping: AlertTypeMapping = {
+  ...DEFAULT_MAPPING,
+  [GithubAlertType.IMPORTANT]: DirectiveName.WARNING,
+};
+
+const processor = remark()
+  .use(remarkGithubAdmonitionsToDirectives, { mapping })
+  .use(remarkDirective);
+
+const result = processor.processSync(`
+> [!IMPORTANT]
+> content
+`);
+
+console.log(result.toString());
+
+// should output:
+// :::info
+// content
+// :::
+```
+
 # 🙌 Contributing
 
 This plugin was created and is maintained by [Incentro](https://www.incentro.com/). If you're running into issues, please [open an issue](https://github.com/incentro-dc/remark-github-admonitions-to-directives/issues/new). If you want to contribute, please read our [contributing guidelines](./CONTRIBUTING.md).
