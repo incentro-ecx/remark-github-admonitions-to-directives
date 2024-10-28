@@ -1,15 +1,10 @@
 name: Prepare
-description: Checks out the code, sets up Node.js and PNPM and installs dependencies
+description: Sets up Node.js and PNPM and installs dependencies
 
 runs:
   using: "composite"
 
   steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-
     - name: Setup pnpm
       uses: pnpm/action-setup@v3
       with:
