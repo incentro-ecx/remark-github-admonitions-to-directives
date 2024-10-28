@@ -1,0 +1,24 @@
+name: Prepare
+description: Sets up Node.js and PNPM and installs dependencies
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v3
+      with:
+        version: 9
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: pnpm
+
+    - name: Install dependencies
+      shell: bash
+
+      # Don't run scripts to prevent a malicious package from stealing tokens
+      # or doing other harmful things.
+      run: pnpm install --ignore-scripts

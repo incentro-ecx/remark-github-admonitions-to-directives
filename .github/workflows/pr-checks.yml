@@ -20,19 +20,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install
+      - name: Prepare
+        uses: ./.github/actions/prepare
 
       - name: Run lint commands
         run: pnpm lint
@@ -47,19 +36,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install
+      - name: Prepare
+        uses: ./.github/actions/prepare
 
       - name: Run builds
         run: pnpm build
@@ -74,19 +52,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
+      - name: Prepare
+        uses: ./.github/actions/prepare
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Run builds
+      - name: Run tests
         run: pnpm test
