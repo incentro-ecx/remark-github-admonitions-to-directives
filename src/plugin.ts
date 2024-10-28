@@ -2,10 +2,16 @@ import type { Blockquote, Parent, Root } from "mdast";
 import type { ContainerDirective } from "mdast-util-directive";
 import type { Plugin } from "unified";
 import { visit } from "unist-util-visit";
-import { mapGithubAlertTypeToDirectiveName } from "./map-github-alert-type-to-directive-name.js";
+import { DEFAULT_MAPPING } from "./default-mapping.const.js";
+import type { Options } from "./options.type.js";
 import { parseGithubAlertBlockquote } from "./parse-github-alert-blockquote.js";
 
-export const remarkGithubAdmonitionsToDirectives: Plugin<[], Root> = () => {
+export const remarkGithubAdmonitionsToDirectives: Plugin<
+  [options?: Options],
+  Root
+> = (options) => {
+  const { mapping = DEFAULT_MAPPING } = options ?? {};
+
   return (tree) => {
     visit(
       tree,
@@ -17,7 +23,7 @@ export const remarkGithubAdmonitionsToDirectives: Plugin<[], Root> = () => {
 
         const directive: ContainerDirective = {
           type: "containerDirective",
-          name: mapGithubAlertTypeToDirectiveName(githubAlert.type),
+          name: mapping[githubAlert.type],
           children: githubAlert.children,
         };
 
