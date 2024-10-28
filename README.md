@@ -136,7 +136,7 @@ const result = processor.processSync(`
 console.log(result.toString());
 
 // should output:
-// :::info
+// :::warning
 // content
 // :::
 ```
